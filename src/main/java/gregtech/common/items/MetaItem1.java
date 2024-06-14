@@ -75,6 +75,8 @@ import static gregtech.api.util.DyeUtil.getOredictColorName;
 import static gregtech.common.items.MetaItems.*;
 
 public class MetaItem1 extends StandardMetaItem {
+    private static final String TOOLTIP_ITEM_TRANSFER_RATE = "gregtech.universal.tooltip.item_transfer_rate";
+    private static final String TOOLTIP_FLUID_TRANSFER_RATE = "gregtech.universal.tooltip.fluid_transfer_rate";
 
     public MetaItem1() {
         super();
@@ -1199,23 +1201,23 @@ public class MetaItem1 extends StandardMetaItem {
         ELECTRIC_PUMP_ULV = addItem(11118, "electric.pump.ulv")
                 .addComponents(new TooltipBehavior(lines -> {
                     lines.add(I18n.format("metaitem.electric.pump.tooltip"));
-                    lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 1280 / 4));
+                    lines.add(I18n.format(TOOLTIP_FLUID_TRANSFER_RATE, 1280 / 4));
                 }));
         CONVEYOR_MODULE_ULV = addItem(11119, "conveyor.module.ulv")
                 .addComponents(new TooltipBehavior(lines -> {
                     lines.add(I18n.format("metaitem.conveyor.module.tooltip"));
-                    lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 2));
+                    lines.add(I18n.format(TOOLTIP_ITEM_TRANSFER_RATE, 2));
                 }));
         ELECTRIC_PISTON_ULV = addItem(11120, "electric.piston.ulv");
         ROBOT_ARM_ULV = addItem(11121, "robot.arm.ulv")
                 .addComponents(new TooltipBehavior(lines -> {
                     lines.add(I18n.format("metaitem.robot.arm.tooltip"));
-                    lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 2));
+                    lines.add(I18n.format(TOOLTIP_ITEM_TRANSFER_RATE, 2));
                 }));
         FLUID_REGULATOR_ULV = addItem(11122, "fluid.regulator.ulv")
                 .addComponents(new TooltipBehavior(lines -> {
                     lines.add(I18n.format("metaitem.fluid.regulator.tooltip"));
-                    lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 320 / 4));
+                    lines.add(I18n.format(TOOLTIP_FLUID_TRANSFER_RATE, 320 / 4));
                 }));
         FIELD_GENERATOR_ULV = addItem(11123, "field.generator.ulv");
         EMITTER_ULV = addItem(11124, "emitter.ulv");
