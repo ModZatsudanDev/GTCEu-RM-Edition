@@ -39,6 +39,8 @@ import gregtech.common.metatileentities.electric.MetaTileEntitySingleTurbine;
 import gregtech.common.metatileentities.electric.MetaTileEntityTransformer;
 import gregtech.common.metatileentities.electric.MetaTileEntityWorldAccelerator;
 import gregtech.common.metatileentities.electric.SimpleMachineMetaTileEntityResizable;
+import gregtech.common.metatileentities.gtrmcore.steam.SteamAssembler;
+import gregtech.common.metatileentities.gtrmcore.steam.SteamMixer;
 import gregtech.common.metatileentities.multi.BoilerType;
 import gregtech.common.metatileentities.multi.MetaTileEntityCokeOven;
 import gregtech.common.metatileentities.multi.MetaTileEntityCokeOvenHatch;
@@ -138,7 +140,6 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 import static gregtech.api.util.GTUtility.gregtechId;
-
 public class MetaTileEntities {
 
     // spotless:off
@@ -371,6 +372,15 @@ public class MetaTileEntities {
     public static MetaTileEntityAlarm ALARM;
 
     public static MetaTileEntityConverter[][] ENERGY_CONVERTER = new MetaTileEntityConverter[4][GTValues.V.length];
+
+    //---------------------------------------GTRMCore----------------------------------------------------------
+
+    public static SteamMixer STEAM_MIXER_LOW;
+    public static SteamMixer STEAM_MIXER_HIGH;
+    public static SteamAssembler STEAM_ASSEMBLER_LOW;
+    public static SteamAssembler STEAM_ASSEMBLER_HIGH;
+    // public static PrimitiveCircuitAssembler PRIMITIVE_CIRCUIT_ASSEMBLER_BRONZE;
+    // public static PrimitiveCircuitAssembler PRIMITIVE_CIRCUIT_ASSEMBLER_STEEL;
 
     //spotless:on
 
@@ -1199,6 +1209,21 @@ public class MetaTileEntities {
          * - CT(MBT) 32000 - ~
          * - FREE RANGE 11000-32767
          */
+
+        // ----------------------------------------------GTRMCore----------------------------------------------------
+        // Primitive machine 11000~11005
+        STEAM_MIXER_LOW = registerMetaTileEntity(11000,
+                new SteamMixer(gregtechId("steam_mixer_low"), false));
+        STEAM_MIXER_HIGH = registerMetaTileEntity(11001,
+                new SteamMixer(gregtechId("steam_mixer_high"), true));
+        STEAM_ASSEMBLER_LOW = registerMetaTileEntity(11002,
+                new SteamAssembler(gregtechId("steam_assembler_low"), false));
+        STEAM_ASSEMBLER_HIGH = registerMetaTileEntity(11003,
+                new SteamAssembler(gregtechId("steam_assembler_high"), true));
+        // PRIMITIVE_CIRCUIT_ASSEMBLER_BRONZE = registerMetaTileEntity(11004,
+        // new PrimitiveCircuitAssembler(gregtechId("steam_circuit)assembler_low"), false));
+        // PRIMITIVE_CIRCUIT_ASSEMBLER_STEEL = registerMetaTileEntity(11005,
+        // new PrimitiveCircuitAssembler(gregtechId("steam_circuit_assembler_high"), true));
     }
 
     private static void registerSimpleMetaTileEntity(SimpleMachineMetaTileEntity[] machines,
